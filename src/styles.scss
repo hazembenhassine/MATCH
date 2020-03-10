@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import "~bootstrap/dist/css/bootstrap.css";
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: url('assets/bg-pattern.png');
+}
+
+.logo-banner {
+  width: 150px;
+  height: 60px;
+  background: url('assets/corp-logo.png') no-repeat;
+  background-size: contain;
+}
+
+.web-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #1d2a59;
+  letter-spacing: 3.6px;
+  line-height: 0.9;
+}
+
+.web-paragraph {
+  font-weight: 600;
+  color: #1d2a59;
+  letter-spacing: 2px;
+  line-height: 1.05;
+}
+
+.match-btn {
+  border-radius: 35px;
+  background-color: #1d2a59;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.match-btn:hover {
+  color: #dedede;
+}
+
+.choice-row {
+  height: 350px;
+  background: url('assets/choice-art.png') no-repeat center;
+  background-size: contain;
+}
+
+.match-btn .btn-content {
+  width: 220px;
+}
+
+.category-btn {
+  border-radius: 35px;
+  background-color: #1d2a59;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  font-weight: 600;
+  color: #ffffff;
+  width: 100%;
+}
+
+.category-btn:hover {
+  color: #dedede;
+}

@@ -1,0 +1,77 @@
+<div class="d-flex justify-content-center py-5">
+  <div class="text-center">
+    <h1 class="web-title">Je consulte</h1>
+    <h2 class="category-title">Art & design</h2>
+  </div>
+</div>
+<div class="row justify-content-center py-1">
+  <div class="col-11 col-lg-6 text-center">
+    <p class="web-paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+    </p>
+  </div>
+</div>
+
+<div class="row justify-content-center my-5">
+  <div class="col-lg-10">
+    <div class="row">
+      <div class="col-lg">
+        <a routerLink="/employee/agency-info">
+          <div class="row no-gutters my-4">
+            <div class="col-8 text-center">
+              <div class="agency-text-container-1 px-1 py-2 p-lg-3">
+                <h3 class="agency-name">OneWay</h3>
+                <p class="agency-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, oiunggqsc.</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="agency-image" [ngStyle]="{'background-image': imageURL}"></div>
+            </div>
+          </div>
+        </a>
+        <a routerLink="/employee/agency-info">
+          <div class="row no-gutters my-4">
+          <div class="col-4">
+            <div class="agency-image" [ngStyle]="{'background-image': imageURL}"></div>
+          </div>
+          <div class="col-8 text-center">
+            <div class="agency-text-container-3 px-1 py-2 p-lg-3">
+              <h3 class="agency-name">OneWay</h3>
+              <p class="agency-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, oiunggqsc.</p>
+            </div>
+          </div>
+        </div>
+        </a>
+      </div>
+      <div class="col-lg">
+        <a routerLink="/employee/agency-info">
+          <div class="row no-gutters my-4">
+          <div class="col-8 text-center">
+            <div class="agency-text-container-2 px-1 py-2 p-lg-3">
+              <h3 class="agency-name">OneWay</h3>
+              <p class="agency-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, oiunggqsc.</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="agency-image" [ngStyle]="{'background-image': imageURL}"></div>
+          </div>
+        </div>
+        </a>
+        <a routerLink="/employee/agency-info">
+          <div class="row no-gutters my-4">
+          <div class="col-4">
+            <div class="agency-image" [ngStyle]="{'background-image': imageURL}"></div>
+          </div>
+          <div class="col-8 text-center">
+            <div class="agency-text-container-4 px-1 py-2 p-lg-3">
+              <h3 class="agency-name">OneWay</h3>
+              <p class="agency-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, oiunggqsc.</p>
+            </div>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+    <app-match-paginator (page)="onPage($event)" [pageIndex]="pageIndex" [size]="size"></app-match-paginator>
+  </div>
+</div>

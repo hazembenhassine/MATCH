@@ -6,15 +6,15 @@ import { AppComponent } from './app.component';
 import { ChoiceComponent } from './pages/choice/choice.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ChoiceComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ChoiceComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

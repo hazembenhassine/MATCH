@@ -50,6 +50,7 @@ a:hover {
   letter-spacing: 2px;
   font-weight: 600;
   color: #ffffff;
+  width: 300px;
 }
 
 .match-btn:hover {
@@ -175,4 +176,85 @@ a:hover {
 
 .paginator-page-marker:hover {
   cursor: pointer;
+}
+
+.stand-map {
+  background: url("assets/map.png") center no-repeat;
+  background-size: contain;
+}
+
+.map-marker-icon {
+  width: 60px;
+}
+
+.stand-name {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.map-agency-name {
+  font-size: 24px;
+}
+
+.compact-height {
+  line-height: 0.95;
+}
+
+.info-container {
+  width: 250px;
+  display: block;
+}
+
+.agency-logo::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: url("assets/logo.png") center no-repeat;
+  background-size: contain;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.info-square {
+  height: 200px;
+}
+
+.info-square > * {
+  width: 100%;
+}
+
+.agency-logo-container {
+  flex-grow: 1;
+  position: relative;
+}
+
+.agency-logo {
+  width: 150px;
+  height: 150px;
+  background: url("assets/logo.png") center no-repeat;
+  background-size: contain;
+}
+
+.agency-address {
+  text-align: center;
+  color: #1d2a59;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.contact-phone-numbers {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d2a59;
+}
+
+.social-media img {
+  height: 48px;
 }

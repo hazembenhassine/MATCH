@@ -50,7 +50,7 @@ a:hover {
   letter-spacing: 2px;
   font-weight: 600;
   color: #ffffff;
-  width: 300px;
+  width: 280px;
 }
 
 .match-btn:hover {
@@ -183,8 +183,33 @@ a:hover {
   background-size: contain;
 }
 
+.map-width {
+  width: 550px;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.map-mobile-width {
+  width: 290px;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.stand-map-mobile {
+  background: url("assets/mobile-map.png") center no-repeat;
+  background-size: contain;
+}
+
 .map-marker-icon {
   width: 60px;
+}
+
+.map-marker-icon-mobile {
+  width: 35px;
 }
 
 .stand-name {
@@ -193,8 +218,18 @@ a:hover {
   letter-spacing: 2px;
 }
 
+.stand-name-mobile {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
 .map-agency-name {
   font-size: 24px;
+}
+
+.map-agency-name-mobile {
+  font-size: 16px;
 }
 
 .compact-height {
@@ -206,11 +241,12 @@ a:hover {
   display: block;
 }
 
-.agency-logo::after {
+.agency-bg {
   content: "";
   height: 100%;
   width: 100%;
-  background: url("assets/logo.png") center no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.2;
   position: absolute;
@@ -237,7 +273,8 @@ a:hover {
 .agency-logo {
   width: 150px;
   height: 150px;
-  background: url("assets/logo.png") center no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
 }
 
@@ -257,4 +294,209 @@ a:hover {
 
 .social-media img {
   height: 48px;
+}
+
+.candidate-description {
+  text-align: center;
+  color: #1f4d77;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.candidate-name {
+  text-align: center;
+  color: #1f4d77;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.recruit-image-container {
+  height: 120px;
+  width: 120px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+@include media-breakpoint-down(lg) {
+  .recruit-image-container {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.recruit-image-container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polygon-container {
+  width: 650px;
+  background: url("assets/polygon.png") center no-repeat;
+  background-size: contain;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d2a59;
+  letter-spacing: 1.8px;
+
+  .polygon-name {
+    font-size: 22px;
+    color: #fff;
+  }
+
+  .negative-margin {
+    margin-left: -20px;
+  }
+
+  .margin-right {
+    margin-right: 5px;
+  }
+
+  .margin-left {
+    margin-left: 5px;
+  }
+
+  .dot {
+    content: "•";
+    font-size: 36px;
+  }
+
+}
+
+.polygon-container-mobile {
+  width: 300px;
+  background: url("assets/polygon-mobile.png") center no-repeat;
+  background-size: contain;
+  font-size: 10px;
+  font-weight: 600;
+  color: #1d2a59;
+  letter-spacing: 1.8px;
+
+  .polygon-name {
+    font-size: 12px;
+    color: #fff;
+  }
+
+  .negative-margin {
+    margin-left: -16px;
+  }
+
+  .margin-right {
+    margin-right: 3px;
+  }
+
+  .margin-left {
+    margin-left: 3px;
+  }
+
+  .dot {
+    content: "•";
+    font-size: 20px;
+  }
+
+}
+
+.candidate-image-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.candidate-image-container > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.button-width {
+  width: 250px;
+}
+
+.candidate-btn {
+  border-radius: 35px;
+  background-color: #1d2a59;
+  font-size: 13px;
+  letter-spacing: 1.4px;
+  font-weight: 600;
+  color: #ffffff;
+  width: 100%;
+}
+
+.left-column {
+  background-color: #1d2a59;
+  color: white;
+}
+
+.top-margin {
+  margin-top: -75px;
+}
+
+.section-name {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.section-text {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+.resume-name {
+  font-size: 36px;
+  font-weight: 600;
+  color: #1d2a59;
+  letter-spacing: 4px;
+}
+
+.resume-job {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1d2a59;
+  letter-spacing: 3px;
+}
+
+.email {
+  color: #1d2a59;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+@include media-breakpoint-down(lg) {
+  .candidate-image-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .top-margin {
+    margin-top: -40px;
+  }
+
+  .section-name {
+    font-size: 10px;
+  }
+
+  .section-text {
+    font-size: 8px;
+  }
+
+}
+
+.contact-btn {
+  background-color: #83b228;
+  border: none;
+  font-size: 10px;
+  color: white;
+  border-radius: 15px;
+}
+
+.candidate-btn:hover {
+  color: #dedede;
+}
+
+.year {
+  font-weight: 500;
+  font-size: 16px;
 }

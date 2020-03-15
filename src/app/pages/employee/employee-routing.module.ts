@@ -6,8 +6,8 @@ import { AgencyInfoComponent } from './agency-info/agency-info.component';
 
 const routes: Routes = [
   { path: '', component: CategoriesComponent },
-  { path: 'agency-list', component: AgencyListComponent },
-  { path: 'agency-info', component: AgencyInfoComponent }
+  { path: 'agency-list/:id', component: AgencyListComponent },
+  { path: 'agency-info/:id', component: AgencyInfoComponent }
   ];
 
 @NgModule({

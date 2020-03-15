@@ -1,75 +1,78 @@
 <div class="d-flex justify-content-center py-5">
   <div class="text-center">
     <h1 class="web-title">Je consulte</h1>
-    <h2 class="category-title">Art & design</h2>
+    <h2 class="category-title">{{ business?.name }}</h2>
   </div>
 </div>
 <div class="row justify-content-center py-1">
   <div class="col-11 col-lg-6 text-center">
     <p class="web-paragraph">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+      {{ business?.description }}
     </p>
   </div>
 </div>
 
-
 <div class="d-none d-lg-flex row justify-content-center">
-  <div class="col-5">
-    <div class="stand-map container-fluid">
-      <div class="row my-4">
-        <div class="col-auto offset-2 d-flex">
-          <div class="my-auto">
-            <img class="map-marker-icon" src="assets/maps-and-flags.svg" alt="map marker icon">
-          </div>
-          <div class="px-2 my-auto stand-name">
-            Stand 01
-          </div>
-        </div>
-      </div>
-      <div class="row my-4 justify-content-end">
-        <div class="col-auto d-flex">
-          <div class="my-auto">
-            <img class="map-marker-icon" src="assets/maps-and-flags.svg" alt="map marker icon">
-          </div>
-          <div class="px-2 my-auto stand-name">
-            Stand 02
-          </div>
-        </div>
-      </div>
-      <div class="row my-4">
-        <div class="col-auto offset-5 d-flex">
-          <div class="my-auto">
-            <img class="map-marker-icon" src="assets/maps-and-flags.svg" alt="map marker icon">
-          </div>
-          <div class="px-2 my-auto stand-name text-center">
-            <div class="compact-height map-agency-name">
-              OneWay
+  <div class="col-auto">
+    <div *ngIf="business?.stand_img" class="map-width" [ngStyle]="{'background-image' : 'url(\''+environment.url + '/' + business?.stand_img+'\')'}">
+      <div class="stand-map container-fluid">
+        <!--
+        <div class="row my-4">
+          <div class="col-auto offset-2 d-flex">
+            <div class="my-auto">
+              <img class="map-marker-icon" src="assets/maps-and-flags.svg" alt="map marker icon">
             </div>
-            <div class="compact-height">
-              Stand 03
+            <div class="px-2 my-auto stand-name">
+              Stand 01
             </div>
           </div>
         </div>
-      </div>
-      <div class="row my-4">
-        <div class="col-auto d-flex">
-          <div class="my-auto">
-            <img class="map-marker-icon" src="assets/maps-and-flags.svg" alt="map marker icon">
-          </div>
-          <div class="px-2 my-auto stand-name">
-            Stand 04
-          </div>
-        </div>
-      </div>
-      <div class="row my-4 justify-content-end">
-        <div class="col-auto offset-8 d-flex">
-          <div class="my-auto">
-            <img class="map-marker-icon" src="assets/maps-and-flags.svg" alt="map marker icon">
-          </div>
-          <div class="px-2 my-auto stand-name">
-            Stand 05
+        <div class="row my-4 justify-content-end">
+          <div class="col-auto d-flex">
+            <div class="my-auto">
+              <img class="map-marker-icon" src="assets/maps-and-flags.svg" alt="map marker icon">
+            </div>
+            <div class="px-2 my-auto stand-name">
+              Stand 02
+            </div>
           </div>
         </div>
+        <div class="row my-4">
+          <div class="col-auto offset-5 d-flex">
+            <div class="my-auto">
+              <img class="map-marker-icon" src="assets/maps-and-flags.svg" alt="map marker icon">
+            </div>
+            <div class="px-2 my-auto stand-name text-center">
+              <div class="compact-height map-agency-name">
+                OneWay
+              </div>
+              <div class="compact-height">
+                Stand 03
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col-auto d-flex">
+            <div class="my-auto">
+              <img class="map-marker-icon" src="assets/maps-and-flags.svg" alt="map marker icon">
+            </div>
+            <div class="px-2 my-auto stand-name">
+              Stand 04
+            </div>
+          </div>
+        </div>
+        <div class="row my-4 justify-content-end">
+          <div class="col-auto offset-8 d-flex">
+            <div class="my-auto">
+              <img class="map-marker-icon" src="assets/maps-and-flags.svg" alt="map marker icon">
+            </div>
+            <div class="px-2 my-auto stand-name">
+              Stand 05
+            </div>
+          </div>
+        </div>
+        -->
       </div>
     </div>
   </div>
@@ -77,13 +80,15 @@
     <div class="info-container my-auto">
       <div class="info-square d-flex flex-column">
         <div class="agency-logo-container d-flex justify-content-center">
-          <div class="agency-logo my-auto">
+          <div class="agency-logo my-auto" [ngStyle]="{'background-image' : 'url(\''+environment.url + '/' + business?.logo_img + '\')'}">
+
+          </div>
+          <div class="agency-bg" [ngStyle]="{'background-image' : 'url(\''+environment.url + '/' + business?.logo_img + '\')'}">
 
           </div>
         </div>
         <div class="agency-address">
-          Résidence Heifa, rue Ibn Rachik,
-          4000 Manar 2, Tunis
+          {{ business?.description }}
         </div>
       </div>
       <div class="phone-numbers py-3">
@@ -109,5 +114,112 @@
 </div>
 
 <div class="d-lg-none">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div *ngIf="pageIndex == 0" class="col-11 d-flex justify-content-center">
+        <div [ngStyle]="{'background-image' : 'url(\''+environment.url + '/' + business?.stand_img+'\')'}" class="map-mobile-width">
+          <div class="stand-map-mobile container-fluid">
+            <!--
+            <div class="row my-3">
+              <div class="col-auto offset-2 d-flex">
+                <div class="my-auto">
+                  <img class="map-marker-icon-mobile" src="assets/maps-and-flags.svg" alt="map marker icon">
+                </div>
+                <div class="px-1 my-auto stand-name-mobile">
+                  Stand 01
+                </div>
+              </div>
+            </div>
+            <div class="row my-3 justify-content-end">
+              <div class="col-auto d-flex">
+                <div class="my-auto">
+                  <img class="map-marker-icon-mobile" src="assets/maps-and-flags.svg" alt="map marker icon">
+                </div>
+                <div class="px-1 my-auto stand-name-mobile">
+                  Stand 02
+                </div>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col-auto offset-3 d-flex">
+                <div class="my-auto">
+                  <img class="map-marker-icon-mobile" src="assets/maps-and-flags.svg" alt="map marker icon">
+                </div>
+                <div class="px-1 my-auto stand-name-mobile text-center">
+                  <div class="compact-height map-agency-name-mobile">
+                    OneWay
+                  </div>
+                  <div class="compact-height">
+                    Stand 03
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col-auto d-flex">
+                <div class="my-auto">
+                  <img class="map-marker-icon-mobile" src="assets/maps-and-flags.svg" alt="map marker icon">
+                </div>
+                <div class="px-1 my-auto stand-name-mobile">
+                  Stand 04
+                </div>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col-auto offset-5 d-flex">
+                <div class="my-auto">
+                  <img class="map-marker-icon-mobile" src="assets/maps-and-flags.svg" alt="map marker icon">
+                </div>
+                <div class="px-1 my-auto stand-name-mobile">
+                  Stand 05
+                </div>
+              </div>
+            </div>
+            -->
+          </div>
+        </div>
+      </div>
+      <div *ngIf="pageIndex == 1" class="col-11 d-flex justify-content-center">
+        <div class="info-container my-auto">
+          <div class="info-square d-flex flex-column">
+            <div class="agency-logo-container d-flex justify-content-center">
+              <div class="agency-logo my-auto" [ngStyle]="{'background-image' : 'url(\''+environment.url + '/' + business?.logo_img + '\')'}">
 
+              </div>
+              <div class="agency-bg" [ngStyle]="{'background-image' : 'url(\''+environment.url + '/' + business?.logo_img + '\')'}"></div>
+            </div>
+            <div class="agency-address">
+              {{ business?.description }}
+            </div>
+          </div>
+          <div class="phone-numbers py-3">
+            <div class="contact-phone-numbers text-center">
+              +216 73 954 267
+            </div>
+            <div class="contact-phone-numbers text-center">
+              +216 58 954 267
+            </div>
+          </div>
+          <div class="social-media row justify-content-center no-gutters">
+            <div class="col-auto px-1">
+              <a href="http://www.facebook.com"><img src="assets/facebook-old.svg" alt="facebook icon"></a>
+            </div>
+            <div class="col-auto px-1">
+              <a href="http://www.linkedin.com"><img src="assets/linkedin.svg" alt="linkedin icon"></a>
+            </div>
+            <div class="col-auto px-1">
+              <a href="http://www.twitter.com"><img src="assets/twitter.svg" alt="twitter icon"></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="pageIndex == 0" class="row">
+      <div class="col-12">
+        <button (click)="openInfo()" class="btn category-btn px-4 my-4">
+          En savoir plus
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-match-paginator [pageSize]="1" [size]="2" [pageIndex]="pageIndex" (page)="setPageIndex($event)"></app-match-paginator>
 </div>

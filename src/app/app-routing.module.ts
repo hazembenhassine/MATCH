@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ChoiceComponent} from './pages/choice/choice.component';
+import {LoginComponent} from './pages/login/login.component';
+import {AuthGuardService} from './services/authentification/auth-guard.service';
 
 const routes: Routes = [
   {
     path: 'choice',
     component: ChoiceComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: '',
@@ -14,7 +20,8 @@ const routes: Routes = [
   },
   {
     path: 'employer',
-    loadChildren: () => import('./pages/employer/employer.module').then(m => m.EmployerModule)
+    loadChildren: () => import('./pages/employer/employer.module').then(m => m.EmployerModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'employee',

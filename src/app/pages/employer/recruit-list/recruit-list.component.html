@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-center py-5">
+  <h1 class="web-title">Je recrute</h1>
+</div>
+<div class="row justify-content-center py-1">
+  <div class="col-11 col-lg-6 text-center">
+    <p class="web-paragraph">
+      {{category?.description}}
+    </p>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-11 container-fluid">
+    <div *ngFor="let row of candidates?.slice(pageIndex*12, (pageIndex + 1) * 12)" class="row no-gutters justify-content-center">
+      <div *ngFor="let group of row" class="col-lg-6 recruit-cluster-container">
+        <div class="container-fluid">
+          <div class="row justify-content-center py-3">
+            <div *ngFor="let candidate of group" class="col-4 d-flex flex-column justify-content-center">
+              <a [routerLink]="'/employer/candidate/'+candidate._id">
+                <div class="recruit-image-container mx-auto">
+                  <img src="assets/pp.jpg" alt="recruit image">
+                </div>
+                <div class="candidate-name">
+                  {{ candidate?.lname[0].toUpperCase()+'.'+candidate?.lname?.charAt(0).toUpperCase() + candidate?.lname?.slice(1) }}
+                </div>
+                <div class="candidate-description">
+                  {{ candidate.position }}
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-match-paginator *ngIf="size/12 > 1" [pageIndex]="pageIndex" [size]="size" [pageSize]="12"></app-match-paginator>
+  </div>
+</div>

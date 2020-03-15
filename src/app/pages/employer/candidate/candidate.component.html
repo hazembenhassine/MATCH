@@ -1,0 +1,130 @@
+<div class="row h-100">
+  <div class="col-12">
+    <div class="d-flex justify-content-center py-5">
+      <h1 class="web-title">Je recrute</h1>
+    </div>
+    <div class="row justify-content-center py-1">
+      <div class="col-11 col-lg-6 text-center">
+        <p class="web-paragraph">
+          {{ candidate?.category?.description }}
+        </p>
+      </div>
+    </div>
+
+    <div class="row d-none d-lg-flex justify-content-center">
+      <div class="col-auto">
+        <div class="polygon-container">
+          <div class="row">
+            <div class="offset-6 pt-4 col-auto d-flex">
+              <span class="my-auto dot negative-margin margin-right">•</span>
+              <span class="my-auto">
+                {{ (candidate?.qualities != null && candidate?.qualities.length > 0) ? candidate.qualities[0] : '' }}
+              </span>
+            </div>
+          </div>
+          <div class="row pt-5 d-flex">
+            <div class="col-auto pt-2 d-flex">
+              <span class="my-auto">
+                {{ (candidate?.qualities != null && candidate?.qualities.length > 1) ? candidate.qualities[1] : '' }}
+              </span>
+              <span class="my-auto dot margin-left">•</span>
+            </div>
+            <div class="col text-center pt-5">
+          <span class="pt-5 polygon-name">
+            {{ candidate?.lname[0].toUpperCase()+'.'+candidate?.lname?.charAt(0).toUpperCase() + candidate?.lname?.slice(1) }}
+          </span>
+            </div>
+            <div class="col-auto pt-2 d-flex">
+              <span class="my-auto dot margin-right">•</span>
+              <span class="my-auto">
+                {{ (candidate?.qualities != null && candidate?.qualities.length > 2) ? candidate.qualities[2] : '' }}
+              </span>
+            </div>
+          </div>
+          <div class="row py-5 justify-content-between">
+            <div class="col-auto pt-2 pl-5 d-flex">
+              <span class="my-auto">
+                {{ (candidate?.qualities != null && candidate?.qualities.length > 3) ? candidate.qualities[3] : '' }}
+              </span>
+              <span class="my-auto dot margin-left">•</span>
+            </div>
+            <div class="col-auto pt-2 pr-5 d-flex">
+              <span class="my-auto dot margin-right">•</span>
+              <span class="my-auto">
+                {{ (candidate?.qualities != null && candidate?.qualities.length > 4) ? candidate.qualities[4] : '' }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="candidate-info d-flex flex-column py-5">
+          <div class="d-flex justify-content-center">
+            <div class="candidate-image-container">
+              <img *ngIf="candidate?.user_img" [src]="environment.url + '/' + candidate?.user_img" alt="candidate image">
+            </div>
+          </div>
+          <div class="text-center">
+            <a [routerLink]="'/employer/candidate-resume/' + candidateId" class="btn category-btn button-width px-4 my-4">
+              En savoir plus
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-lg-none justify-content-center">
+      <div class="col-auto">
+        <div class="polygon-container-mobile">
+          <div class="row">
+            <div class="col-auto offset-6 d-flex">
+              <span class="my-auto dot negative-margin">•</span>
+              <span class="my-auto">
+                {{ (candidate?.qualities != null && candidate?.qualities.length > 0) ? candidate.qualities[0] : '' }}
+              </span>
+            </div>
+          </div>
+          <div class="row pt-2 justify-content-between">
+            <div class="col-auto d-flex">
+              <span class="my-auto">
+                {{ (candidate?.qualities != null && candidate?.qualities.length > 1) ? candidate.qualities[1] : '' }}
+              </span>
+              <span class="my-auto dot margin-left">•</span>
+            </div>
+            <div class="col-auto d-flex">
+              <span class="my-auto dot margin-right">•</span>
+              <span class="my-auto">
+                {{ (candidate?.qualities != null && candidate?.qualities.length > 2) ? candidate.qualities[2] : '' }}
+              </span>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-auto polygon-name text-center">
+              {{ candidate?.lname?.charAt(0).toUpperCase() + candidate?.lname?.slice(1) }}
+            </div>
+          </div>
+          <div class="row pt-3 justify-content-between">
+            <div class="col-auto d-flex pl-4">
+              <span class="my-auto">
+                {{ (candidate?.qualities != null && candidate?.qualities.length > 3) ? candidate.qualities[3] : '' }}
+              </span>
+              <span class="my-auto dot margin-left">•</span>
+            </div>
+            <div class="col-auto d-flex pr-4">
+              <span class="my-auto dot margin-right">•</span>
+              <span class="my-auto">
+                {{ (candidate?.qualities != null && candidate?.qualities.length > 4) ? candidate.qualities[4] : '' }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <a [routerLink]="'/employer/candidate-resume/' + candidate?._id" class="btn candidate-btn button-width px-4 my-4">
+            En savoir plus
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

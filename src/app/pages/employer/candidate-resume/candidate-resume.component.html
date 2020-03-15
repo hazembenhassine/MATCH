@@ -1,0 +1,146 @@
+<div class="row d-none d-lg-flex no-gutters pt-5">
+  <div class="offset-2 col-8 pt-5">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3 left-column">
+          <div class="d-flex justify-content-center top-margin">
+            <div class="candidate-image-container">
+              <img *ngIf="candidate?.user_img" [src]="environment.url + '/' + candidate?.user_img" alt="candidate image">
+            </div>
+          </div>
+          <div class="py-3 px-2">
+            <h2 class="section-name">{{ candidate?.title1 }}</h2>
+            <p class="section-text text-justify">
+              {{ candidate?.content1 }}
+            </p>
+            <h2 class="section-name">{{ candidate?.title2 }}</h2>
+            <p class="section-text text-justify">
+              {{ candidate?.content2 }}
+            </p>
+            <h2 class="section-name">{{ candidate?.title3 }}</h2>
+            <p class="section-text text-justify">
+              {{ candidate?.content3 }}
+            </p>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="top-margin text-center py-4">
+            <h1 class="resume-name">
+              {{ candidate?.lname[0].toUpperCase()+'.'+candidate?.lname?.charAt(0).toUpperCase() + candidate?.lname?.slice(1) }}
+            </h1>
+            <h2 class="resume-job">{{candidate?.position}}</h2>
+          </div>
+          <div class="py-3 px-4">
+            <h2 class="section-name mb-4">Lorem Ipsum</h2>
+            <div *ngFor="let job of candidate?.job_histories">
+              <h3 class="year">{{job?.date}}</h3>
+              <p class="section-text">
+                {{job?.description}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-2 d-flex">
+    <div class="my-auto">
+      <div class="email text-center">{{ candidate?.email }}</div>
+      <div class="phone-numbers py-3">
+        <div *ngIf="candidate?.tel1" class="contact-phone-numbers text-center">
+          {{ candidate?.tel1 }}
+        </div>
+        <div *ngIf="candidate?.tel2" class="contact-phone-numbers text-center">
+          {{ candidate?.tel2 }}
+        </div>
+      </div>
+      <div class="social-media row justify-content-center no-gutters">
+        <div *ngIf="candidate?.facebook_url" class="col-auto px-1">
+          <a [href]="candidate?.facebook_url"><img src="assets/facebook-old.svg" alt="facebook icon"></a>
+        </div>
+        <div *ngIf="candidate?.linkedin_url" class="col-auto px-1">
+          <a  [href]="candidate?.linkedin_url"><img src="assets/linkedin.svg" alt="linkedin icon"></a>
+        </div>
+        <div *ngIf="candidate?.twitter_url" class="col-auto px-1">
+          <a [href]="candidate?.twitter_url"><img src="assets/twitter.svg" alt="twitter icon"></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-lg-none">
+  <div class="text-center py-4">
+    <h1 class="resume-name">
+      {{ candidate?.lname[0].toUpperCase()+'.'+candidate?.lname?.charAt(0).toUpperCase() + candidate?.lname?.slice(1) }}
+    </h1>
+    <h2 class="resume-job">{{candidate?.position}}</h2>
+  </div>
+
+  <div *ngIf="pageIndex == 0" class="row pt-4">
+    <div class="col-4 left-column">
+      <div class="d-flex justify-content-center top-margin">
+        <div class="candidate-image-container">
+          <img *ngIf="candidate?.user_img" [src]="environment.url + '/' + candidate?.user_img" alt="candidate image">
+        </div>
+      </div>
+      <div class="py-3">
+        <h2 class="section-name">{{ candidate?.title1 }}</h2>
+        <p class="section-text text-justify">
+          {{ candidate?.content1 }}
+        </p>
+        <h2 class="section-name">{{ candidate?.title2 }}</h2>
+        <p class="section-text text-justify">
+          {{ candidate?.content2 }}
+        </p>
+        <h2 class="section-name">{{ candidate?.title3 }}</h2>
+        <p class="section-text text-justify">
+          {{ candidate?.content3 }}
+        </p>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="text-center">
+        <button (click)="setPageIndex(1)" class="btn contact-btn">
+          Contacter
+        </button>
+      </div>
+      <div class="py-3 px-2">
+        <h2 class="section-name mb-4">Lorem Ipsum</h2>
+        <div *ngFor="let job of candidate?.job_histories">
+          <h3 class="year">{{job?.date}}</h3>
+          <p class="section-text">
+            {{job?.description}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="pageIndex == 1" class="row justify-content-center">
+    <div class="col-auto d-flex">
+      <div class="my-auto">
+        <div class="email text-center">{{ candidate?.email }}</div>
+        <div class="phone-numbers py-3">
+          <div *ngIf="candidate?.tel1" class="contact-phone-numbers text-center">
+            {{ candidate?.tel1 }}
+          </div>
+          <div *ngIf="candidate?.tel2" class="contact-phone-numbers text-center">
+            {{ candidate?.tel2 }}
+          </div>
+        </div>
+        <div class="social-media row justify-content-center no-gutters">
+          <div *ngIf="candidate?.facebook_url" class="col-auto px-1">
+            <a [href]="candidate?.facebook_url"><img src="assets/facebook-old.svg" alt="facebook icon"></a>
+          </div>
+          <div *ngIf="candidate?.linkedin_url" class="col-auto px-1">
+            <a  [href]="candidate?.linkedin_url"><img src="assets/linkedin.svg" alt="linkedin icon"></a>
+          </div>
+          <div *ngIf="candidate?.twitter_url" class="col-auto px-1">
+            <a [href]="candidate?.twitter_url"><img src="assets/twitter.svg" alt="twitter icon"></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-match-paginator [size]="2" [pageSize]="1" [pageIndex]="pageIndex" (page)="setPageIndex($event.pageIndex)"></app-match-paginator>
+
+</div>

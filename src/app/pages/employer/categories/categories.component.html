@@ -9,50 +9,11 @@
   </div>
 </div>
 <div class="my-3 py-lg-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-3 px-4 py-3">
-      <a>
+  <div *ngFor="let categoryCouple of categories" class="row  justify-content-center">
+    <div *ngFor="let category of categoryCouple" class="col-lg-3 px-4 py-3">
+      <a [routerLink]="'/employer/recruit-list/'+category._id">
         <button class="btn category-btn px-4">
-          Chercheur d’emploi
-        </button>
-      </a>
-    </div>
-    <div class="col-lg-3 px-4 py-3">
-      <a>
-        <button class="btn category-btn px-4">
-          Chercheur d’emploi
-        </button>
-      </a>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-lg-3 px-4 py-3">
-      <a>
-        <button class="btn category-btn px-4">
-          Chercheur d’emploi
-        </button>
-      </a>
-    </div>
-    <div class="col-lg-3 px-4 py-3">
-      <a>
-        <button class="btn category-btn px-4">
-          Chercheur d’emploi
-        </button>
-      </a>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-lg-3 px-4 py-3">
-      <a>
-        <button class="btn category-btn px-4">
-          Chercheur d’emploi
-        </button>
-      </a>
-    </div>
-    <div class="col-lg-3 px-4 py-3">
-      <a>
-        <button class="btn category-btn px-4">
-          Chercheur d’emploi
+          {{category ? category.name : 'Lorem Ipsum' }}
         </button>
       </a>
     </div>

@@ -10,6 +10,7 @@ export class MatchPaginatorComponent implements OnInit, OnChanges {
 
   @Input() pageIndex: number;
   @Input() size: number;
+  @Input() pageSize: number;
 
   @Output() page: EventEmitter<PageEvent> = new EventEmitter<PageEvent>();
 
@@ -18,19 +19,19 @@ export class MatchPaginatorComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
-    this.pages = Array(Math.ceil(this.size / 4)).fill(0).map((x, i) => i);
+    this.pages = Array(Math.ceil(this.size / this.pageSize)).fill(0).map((x, i) => i);
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.size) {
-      this.pages = Array(Math.ceil(changes.size.currentValue / 4)).fill(0).map((x, i) => i);
+      this.pages = Array(Math.ceil(changes.size.currentValue / this.pageSize)).fill(0).map((x, i) => i);
     }
   }
 
   emitEvent() {
     this.page.emit({
       pageIndex: this.pageIndex,
-      pageSize: 4
+      pageSize: this.pageSize
     });
   }
 

@@ -189,15 +189,15 @@
               <div class="agency-bg" [ngStyle]="{'background-image' : 'url(\''+environment.url + '/' + business?.logo_img + '\')'}"></div>
             </div>
             <div class="agency-address">
-              {{ business?.description }}
+              {{ business?.address }}
             </div>
           </div>
           <div class="phone-numbers py-3">
             <div class="contact-phone-numbers text-center">
-              +216 73 954 267
+              {{ business?.tel1 }}
             </div>
             <div class="contact-phone-numbers text-center">
-              +216 58 954 267
+              {{ business?.tel2 }}
             </div>
           </div>
           <div class="social-media row justify-content-center no-gutters">
